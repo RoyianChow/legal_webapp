@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Upload Video</mat-card-title>
+  </mat-card-header>
+  <br>
+
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" id="title" name="title" [(ngModel)]="title" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput id="description" name="description" [(ngModel)]="description" required></textarea>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Party 1</mat-label>
+        <input matInput type="text" id="party1" name="party1" [(ngModel)]="party1" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Party 2</mat-label>
+        <input matInput type="text" id="party2" name="party2" [(ngModel)]="party2" required>
+      </mat-form-field>
+<br>
+      <div>
+        <label for="video"></label>
+        <input type="file" id="video" name="video" (change)="handleFileInput($event)" required>
+      </div>
+      <br>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" type="submit">Upload</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- Success message -->
+<div *ngIf="uploadSuccess">
+  <span>Upload successful!</span>
+  <button mat-button (click)="closeUploadSuccessMessage()">Close</button>
+</div>

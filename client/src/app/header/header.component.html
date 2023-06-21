@@ -1,0 +1,18 @@
+<header>
+  <div class="title">
+    <h1>The Legal Proceeding Database</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li>  <a *ngIf="authService.getIsLoggedIn()" (click)="upload()">Upload</a></li>
+      <li><a routerLink="/library">Library</a></li>
+
+        <li>  <a *ngIf="(authService.loggedIn | async); else showLogin" (click)="authService.logoutUser()">Logout</a></li>
+        <ng-template #showLogin>
+          <a routerLink="/login">Login</a>
+        </ng-template>
+
+    </ul>
+  </nav>
+</header>

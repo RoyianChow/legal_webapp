@@ -1,0 +1,29 @@
+<h2>Edit Video</h2>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" formControlName="title" required>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" required></textarea>
+  </div>
+  <div>
+    <label for="party1">Party 1</label>
+    <input type="text" id="party1" formControlName="party1" required>
+  </div>
+  <div>
+    <label for="party2">Party 2</label>
+    <input type="text" id="party2" formControlName="party2" required>
+  </div>
+  <div>
+    <label for="video">Video</label>
+    <input type="file" id="video" name="video" (change)="handleFileInput($event)">
+  </div>
+  <button type="submit">Update</button>
+</form>
+<!-- Success message -->
+<div *ngIf="updateSuccess">
+  Update successful!
+  <button (click)="closeUpdateSuccessMessage()">Close</button>
+</div>

@@ -1,0 +1,18 @@
+<div class="video-container">
+  <mat-card class="video-card">
+    <mat-card-header>
+      <mat-card-title>Video Title</mat-card-title>
+      <mat-card-subtitle>Subtitle or Additional Info</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <video width="100%" height="auto" controls>
+        <source [src]="videoUrl" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary">Action 1</button>
+      <button mat-button color="accent">Action 2</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
